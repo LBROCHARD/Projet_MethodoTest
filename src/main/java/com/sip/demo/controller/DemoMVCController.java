@@ -1,13 +1,21 @@
 package com.sip.demo.controller;
 
-import com.sip.demo.entities.Etudiant;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import jakarta.persistence.*;
-
-@Entity 
-
-@Table(name = "products") 
-
+@Controller
 public class DemoMVCController { 
     
+    @GetMapping("/msg")
+	// @ResponseBody
+	public String displayMessage() {
+		return "message/message";
+	}
+
+    @GetMapping("/etudiants")
+	// @ResponseBody
+	public String listProviders() {
+		return "etudiant/etudiants";
+	}
 }
